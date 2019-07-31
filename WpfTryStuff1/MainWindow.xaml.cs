@@ -29,53 +29,74 @@ namespace WpfTryStuff1
 
         public void InitData()
         {
-            DataFill1(); 
+            // DataFill1();
+            DataFill0();
         }
 
         private void DataFill1()
         {
+            //var rawData = TestDataClassUi0.AllData;
+            //var Items = new ObservableCollection<CourseListItem>();
+
+            //// ListCourses. = Items;
+            //ListCourses.Items = Items;
+            //ListCourses.Items.Clear();
+            //ListCourses.ItemsSource = items;
+
+            //ListCourses.
+
 
         }
 
         private void DataFill0()
         {
-            //List<CourseListItem> items = new List<CourseListItem>();
-            //Thickness thick = new Thickness(0);
+            List<CourseListItem> items = new List<CourseListItem>();
+            Thickness thick = new Thickness(0);
 
-            //double height = 110, width = 260;
+            items.Add(new CourseListItem());
+            items.Add(new CourseListItem());
 
-            //items.Add(new CourseListItem() { Margin = thick, Height = height, Width = width });
-            //items.Add(new CourseListItem() { Margin = thick,TheMark = "97", Height = height, Width = width });
+            items.Add(new CourseListItem());
+            items.Add(new CourseListItem());
 
-            //CourseListItem item = new CourseListItem() { Margin = thick, Height = height, Width = width };
+            items.Add(new CourseListItem());
+            items.Add(new CourseListItem());
 
-            //item.CourseName.Text = "Hello";
-            //item.TheMark = "105";
-            //item.Points.Text = "4.5";
-            //item.Semester.Text = "A";
-            //item.Year.Text = "2";
+            items.Add(new CourseListItem());
+            items.Add(new CourseListItem());
 
-            //items.Add(item);
+            items.Add(new CourseListItem());
+            items.Add(new CourseListItem());
 
-
-            //ListCourses.Items.Clear();
-            //ListCourses.ItemsSource = items;
+            CourseListItem item = new CourseListItem();
 
 
-
-            //ListCourses
-            //ObservableCollection<CourseListItem> _collection;
-
-            //_collection = new ObservableCollection<CourseListItem>();
+            items.Add(item);
 
 
-            //DataContext = _collection;
+           // ListCourses.Items.Clear();
+           // ListCourses.ItemsSource = items;
 
 
-            //foreach (CourseListItem var0 in items)
-            //{
-            //    _collection.Add(var0);
-            //}
+
+            // ListCourses
+            ObservableCollection<CourseListItem> _collection;
+
+            _collection = new ObservableCollection<CourseListItem>();
+
+
+            DataContext = _collection;
+
+            int index = 0;
+
+            foreach (CourseListItem var0 in items)
+            {
+                var0.CourseName0.Text = $"{index + 10}";
+                var0.Points0.Text = $"{index + 2.5}";
+                var0.Mark0.Text = $"{index * 10 }";
+                index++;
+                _collection.Add(var0);
+            }
         }
     }
 }

@@ -15,24 +15,35 @@ namespace WpfTryStuff1
         public MainWindowViewModel()
         {
             initData();
+            //var rawData = TestDataClassUi0.AllData;
+            //Items = new ObservableCollection<CourseListItem>(
+            //    rawData.Select(data => new CourseListItem()
+            //    {
+            //        Name = data.CourseName,
+            //        Mark = data.Mark,
+            //        Points = data.Points,
+            //        Year = data.Year,
+            //        Semester = data.Semester
+
+            //    }));
 
         }
 
         private void initData()
         {
             // var rawData = TestDataClassUi0.AllData;
-            var rawData = TestDataClass.AllData;
+            //var rawData = TestDataClass.AllData;
 
-            Items = new ObservableCollection<CourseListItem>(
-                rawData.Select(data => new CourseListItem()
-                {
-                    Name = data.CourseName,
-                    Mark = data.Mark,
-                    Points = data.Points,
-                    Year = data.Year,
-                    Semester = data.Semester
+            //Items = new ObservableCollection<CourseListItem>(
+            //    rawData.Select(data => new CourseListItem()
+            //    {
+            //        Name = data.CourseName,
+            //        Mark = data.Mark,
+            //        Points = data.Points,
+            //        Year = data.Year,
+            //        Semester = data.Semester
 
-                }));
+            //    }));
         }
     }
 }

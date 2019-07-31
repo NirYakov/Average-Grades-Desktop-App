@@ -27,15 +27,15 @@ namespace WpfTryStuff1
         }
 
 
-        public string CourseName { get { return CourseName0.Text; } set { value = CourseName0.Text; } }
+        //public string CourseName { get { return CourseName0.Text; } set { value = CourseName0.Text; } }
 
-        public ushort Mark { get { return ushort.Parse((Mark0.Text)); } set { Mark0.Text = value.ToString(); } }
+        //public ushort Mark { get { return ushort.Parse((Mark0.Text)); } set { Mark0.Text = value.ToString(); } }
 
-        public float Points { get{ return float.Parse((Points0.Text)); } set { Points0.Text = value.ToString(); } }
+        //public float Points { get{ return float.Parse((Points0.Text)); } set { Points0.Text = value.ToString(); } }
 
-        public short Year { get { return short.Parse((Year0.Text)); } set { Year0.Text = value.ToString(); } }
+        //public short Year { get { return short.Parse((Year0.Text)); } set { Year0.Text = value.ToString(); } }
 
-        public eSemester Semester { get{ return (eSemester)Enum.Parse(typeof(eSemester),(Semester0.Text)); } set { Semester0.Text = value.ToString(); } } 
+        //public eSemester Semester { get{ return (eSemester)Enum.Parse(typeof(eSemester),(Semester0.Text)); } set { Semester0.Text = value.ToString(); } } 
 
         //  public string CName { get { return CName; } set { CName = value; CName; } }
     }

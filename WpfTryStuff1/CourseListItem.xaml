@@ -4,7 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfTryStuff1"
-             mc:Ignorable="d" d:DesignWidth="260" Height="110">
+             Width="270"
+             Height="120"
+             mc:Ignorable="d">
+
+    <!--Height="120"
+             Width="270"-->
 
     <!-- Background="DeepSkyBlue" -->
     <!--<Border.Effect>
@@ -12,7 +17,7 @@
     <!--<DropShadowEffect Color="Black" ></DropShadowEffect>-->
     <!--BorderBrush="Black" BorderThickness="1,1,1,1"-->
 
-    <Border Margin="5" BorderBrush="Silver" BorderThickness="0.5"  TextBlock.FontSize="17" TextBlock.Foreground="WhiteSmoke" CornerRadius="15" Padding="6" >
+    <Border Margin="10" BorderBrush="Silver" BorderThickness="0.5"  TextBlock.FontSize="17" TextBlock.Foreground="WhiteSmoke" CornerRadius="15" Padding="6" >
 
         <Border.BitmapEffect>
 

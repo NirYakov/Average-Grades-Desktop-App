@@ -19,31 +19,36 @@
         -->
 
         <Border Background="Red"/>
-        <ItemsControl Grid.Row="1" ItemsSource="{Binding}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel IsItemsHost="True" Margin="5" Grid.Row="1" x:Name="ListCourses" >
-                        <!--<local:CourseListItem TheMark="200" Height="100" Width="250"/>-->
 
-                        <!--<WrapPanel Grid.Row="1">-->
+        <!--<ListView Margin="10" Grid.Row="1" x:Name="ListCourses" >-->
+        <!--<ItemsControl Grid.Row="1" x:Name="ListCourses">
+            <WrapPanel>
+                <local:CourseListItem/>
+            </WrapPanel>
+        </ItemsControl>-->
 
-                        <!--<local:CourseListItem Padding="10" Height="100" Width="auto" />
+        <!--<ItemsControl Grid.Row="1" ItemsSource="{Binding ActorList}" Margin="20">-->
+
+        <local:CoursesListControl Grid.Row="1" x:Name="ListCourses"/>
+
+
+        <!--<WrapPanel Grid.Row="1">-->
+
+        <!--<local:CourseListItem Padding="10" Height="100" Width="auto" />
             <local:CourseListItem Height="100" Width="250"/>
             -->
-                        <!--<local:CourseListItem Padding="10" Height="120" Width="270"/>-->
-                        <!--
+        <!--<local:CourseListItem Padding="10" Height="120" Width="270"/>-->
+        <!--
            <local:CourseListItem Height="80" Width="auto"/>
             <local:CourseListItem Height="80" Width="auto"/>-->
 
-                        <!--</WrapPanel>-->
-                        <!-->
+        <!--</WrapPanel>-->
+        <!-->
         
             <local:CourseListItem Height="120" Width="auto" FontSize="20"/>
 -->
 
-                    </WrapPanel>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
+        <!--</ListView>-->
+
     </Grid>
 </Window>
