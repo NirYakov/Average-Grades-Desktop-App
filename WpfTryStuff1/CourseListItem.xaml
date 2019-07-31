@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="WpfTryStuff1.CourseListItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfTryStuff1"
+             mc:Ignorable="d" d:DesignWidth="260" Height="110">
+
+    <!-- Background="DeepSkyBlue" -->
+    <!--<Border.Effect>
+        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2"/>-->
+    <!--<DropShadowEffect Color="Black" ></DropShadowEffect>-->
+    <!--BorderBrush="Black" BorderThickness="1,1,1,1"-->
+
+    <Border Margin="5" BorderBrush="Silver" BorderThickness="0.5"  TextBlock.FontSize="17" TextBlock.Foreground="WhiteSmoke" CornerRadius="15" Padding="6" >
+
+        <Border.BitmapEffect>
+
+            <DropShadowBitmapEffect Color="Black" Direction="320" 
+                                        ShadowDepth="7" Opacity=".7" Softness="5" />
+
+        </Border.BitmapEffect>
+
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF6191E6" Offset="0"/>
+                <GradientStop Color="Red" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <!--was in stack panel => Background="AliceBlue" -->
+        <StackPanel   Height="auto" Width="auto">
+            <!-- <Border Padding="20" Background="Aqua"> -->
+            <!--
+        <Border Padding="5" Background="Beige">
+            <Border CornerRadius="12" Background="BlueViolet">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="hey AAAAAA" />
+            </Border>
+        </Border>
+        -->
+            <Border Padding="7">
+                <StackPanel Margin="13,0,0,0" Orientation="Horizontal" >
+                    <TextBlock Text="Name : "/>
+                    <TextBlock x:Name="CourseName0" Text="{Binding CName}"/>
+                </StackPanel>
+            </Border>
+
+            <Border TextBlock.FontSize="15" BorderBrush="Gold" BorderThickness="0.5" Margin="2" CornerRadius="9">
+
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform Angle="135" CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF8B00FF" Offset="0"/>
+                        <GradientStop Color="#FFFF004B" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Grid TextBlock.Foreground="Wheat">
+                    <Grid.ColumnDefinitions>
+                        <!-- <ColumnDefinition Width="20"/> -->
+                        <ColumnDefinition Width=" 1*"/>
+                        <ColumnDefinition Width=" 1*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--<StackPanel Orientation="Vertical"></StackPanel>-->
+                    <Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Silver" BorderThickness="0.5" CornerRadius="50" Height="12" Width="12">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                                <RotateTransform Angle="60" CenterY="0.5" CenterX="0.5"/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Color="Red" Offset="0.163"/>
+                                        <GradientStop Color="#FFFBFBFB" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+                            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                <TextBlock>Mark :</TextBlock>
+                                <TextBlock x:Name="Mark0" Margin="5,0,0,0"> 000</TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1">
+                        <TextBlock>Points :</TextBlock>
+                        <TextBlock x:Name="Points0" Margin="5,0,0,0"> 000</TextBlock>
+                    </StackPanel>
+                    <!--<TextBlock Grid.Column="1"> Points : _______</TextBlock>-->
+                </Grid>
+            </Border>
+
+            <!-- Nice color DarkGoldenrod -->
+
+            <Border TextBlock.FontSize="15" BorderBrush="Gold" BorderThickness="0.5" Margin="2" CornerRadius="9">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF7400FF" Offset="0"/>
+                        <GradientStop Color="#FF009AF1" Offset="1"/>
+
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Margin="20,0,0,0" Orientation="Horizontal" >
+                        <TextBlock>Year :</TextBlock>
+                        <TextBlock x:Name="Year0" Margin="5,0,0,0"> 000</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1">
+                        <TextBlock>Semester :</TextBlock>
+                        <TextBlock x:Name="Semester0" Margin="5,0,0,0"> 000</TextBlock>
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+            <!-- </Border> -->
+        </StackPanel>
+
+    </Border>
+
+
+    <!--
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width = "auto"/>
+            <ColumnDefinition Width = "auto"/>
+            
+
+        </Grid.ColumnDefinitions>
+            
+    </Grid>
+    -->
+</UserControl>
