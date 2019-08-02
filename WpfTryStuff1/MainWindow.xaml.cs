@@ -30,7 +30,7 @@ namespace WpfTryStuff1
         public void InitData()
         {
             // DataFill1();
-            DataFill0();
+            // DataFill0();
         }
 
         private void DataFill1()

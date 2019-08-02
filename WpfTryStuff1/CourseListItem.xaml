@@ -51,7 +51,6 @@
             </Border>
 
             <Border TextBlock.FontSize="15" BorderBrush="Gold" BorderThickness="0.5" Margin="2" CornerRadius="9">
-
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <LinearGradientBrush.RelativeTransform>
@@ -62,7 +61,9 @@
                                 <TranslateTransform/>
                             </TransformGroup>
                         </LinearGradientBrush.RelativeTransform>
-                        <GradientStop Color="#FF8B00FF" Offset="0"/>
+                        <!-- FF8B00FF -->
+                        <!-- 222 -->
+                        <GradientStop Color="DarkCyan" Offset="0"/>
                         <GradientStop Color="#FFFF004B" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
@@ -93,7 +94,8 @@
                                             </TransformGroup>
                                         </LinearGradientBrush.RelativeTransform>
                                         <GradientStop Color="Red" Offset="0.163"/>
-                                        <GradientStop Color="#FFFBFBFB" Offset="1"/>
+                                        <!-- FFFBFBFB -->
+                                        <GradientStop Color="#444" Offset="1"/>
                                     </LinearGradientBrush>
                                 </Border.Background>
                             </Border>
@@ -117,8 +119,11 @@
             <Border TextBlock.FontSize="15" BorderBrush="Gold" BorderThickness="0.5" Margin="2" CornerRadius="9">
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF7400FF" Offset="0"/>
-                        <GradientStop Color="#FF009AF1" Offset="1"/>
+                        <!-- FF7400FF -->
+                        <!-- 111 -->
+                        <GradientStop Color="DarkViolet" Offset="0"/>
+                        <!-- FFFF004B -->
+                        <GradientStop Color="#FFFF004B" Offset="1"/>
 
                     </LinearGradientBrush>
                 </Border.Background>
