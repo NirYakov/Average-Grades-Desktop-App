@@ -17,7 +17,7 @@
     <!--<DropShadowEffect Color="Black" ></DropShadowEffect>-->
     <!--BorderBrush="Black" BorderThickness="1,1,1,1"-->
 
-    <Border Margin="10" BorderBrush="Silver" BorderThickness="0.5"  TextBlock.FontSize="17" TextBlock.Foreground="WhiteSmoke" CornerRadius="15" Padding="6" >
+    <Border DataContext="{x:Static local:CourseItemViewModelDesign.Instance}" Margin="10" BorderBrush="Silver" BorderThickness="0.5"  TextBlock.FontSize="17" TextBlock.Foreground="WhiteSmoke" CornerRadius="15" Padding="6" >
 
         <Border.BitmapEffect>
 
@@ -44,9 +44,9 @@
         </Border>
         -->
             <Border Padding="7">
-                <StackPanel Margin="13,0,0,0" Orientation="Horizontal" >
-                    <TextBlock Text="Name : "/>
-                    <TextBlock x:Name="CourseName0" Text="{Binding CName}"/>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
+                    <!--<TextBlock Text="Name :  "/>-->
+                    <TextBlock x:Name="CourseName0" Text="{Binding CourseName , FallbackValue= Grahp Theory Zero Data}"/>
                 </StackPanel>
             </Border>
 
@@ -100,15 +100,19 @@
                                 </Border.Background>
                             </Border>
                             <StackPanel Orientation="Horizontal" Grid.Column="1">
-                                <TextBlock>Mark :</TextBlock>
-                                <TextBlock x:Name="Mark0" Margin="5,0,0,0"> 000</TextBlock>
+                                <TextBlock Text="Mark :  "/>
+                                <TextBlock Text="{Binding Mark, FallbackValue=100}"  x:Name="Mark0">
+                                    <!--<TextBlock.Background>
+                                        <SolidColorBrush Color="BlueViolet"/>
+                                    </TextBlock.Background>-->
+                                    </TextBlock>
                             </StackPanel>
                         </Grid>
                     </Border>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="1">
-                        <TextBlock>Points :</TextBlock>
-                        <TextBlock x:Name="Points0" Margin="5,0,0,0"> 000</TextBlock>
+                        <TextBlock Text="Points :  "/>
+                        <TextBlock Text="{Binding Points}" x:Name="Points0" />
                     </StackPanel>
                     <!--<TextBlock Grid.Column="1"> Points : _______</TextBlock>-->
                 </Grid>
@@ -134,13 +138,13 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Margin="20,0,0,0" Orientation="Horizontal" >
-                        <TextBlock>Year :</TextBlock>
-                        <TextBlock x:Name="Year0" Margin="5,0,0,0"> 000</TextBlock>
+                        <TextBlock Text="Year :  "/>
+                        <TextBlock Text="{Binding Year}" x:Name="Year0" />
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="1">
-                        <TextBlock>Semester :</TextBlock>
-                        <TextBlock x:Name="Semester0" Margin="5,0,0,0"> 000</TextBlock>
+                        <TextBlock Text="Semester :  "/>
+                        <TextBlock Text="{Binding Semester}" x:Name="Semester0" /> 
                     </StackPanel>
 
                 </Grid>

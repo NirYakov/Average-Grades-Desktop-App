@@ -9,9 +9,9 @@ namespace WpfTryStuff1
 {
     public class CourseItemViewModel
     {
-        public string Name { get; set; }
+        public string CourseName { get; set; }
 
-        public ushort Mark { get; set; }
+        public ushort Mark { get; set; } = 24;
 
         public float Points { get; set; }
 
