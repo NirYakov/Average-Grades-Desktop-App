@@ -65,6 +65,8 @@
     <Compile Include="CoursesListControl.xaml.cs">
       <DependentUpon>CoursesListControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CoursesListViewModel.cs" />
+    <Compile Include="CoursesListViewModelDesign.cs" />
     <Compile Include="TestDataClassUi0.cs" />
     <Page Include="CourseListItem.xaml">
       <SubType>Designer</SubType>
