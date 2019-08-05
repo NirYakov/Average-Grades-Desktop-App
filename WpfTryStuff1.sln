@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTryStuff1", "WpfTryStuff1\WpfTryStuff1.csproj", "{53CE9387-A4E5-49F8-BB1E-84BDF12F8F9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradesAverage.Core", "GradesAverage.Core\GradesAverage.Core.csproj", "{48BC3FDD-EF8A-4B5C-8881-819404F469C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{53CE9387-A4E5-49F8-BB1E-84BDF12F8F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53CE9387-A4E5-49F8-BB1E-84BDF12F8F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53CE9387-A4E5-49F8-BB1E-84BDF12F8F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48BC3FDD-EF8A-4B5C-8881-819404F469C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48BC3FDD-EF8A-4B5C-8881-819404F469C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48BC3FDD-EF8A-4B5C-8881-819404F469C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48BC3FDD-EF8A-4B5C-8881-819404F469C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

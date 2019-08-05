@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfTryStuff1"
+             xmlns:core="clr-namespace:GradesAverage.Core;assembly=GradesAverage.Core"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="500">
+             d:DesignHeight="500" d:DesignWidth="600">
 
     <!--<ItemsControl Margin="20" x:Name="ListCourses">-->
 
@@ -24,10 +25,12 @@
 
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <ItemsControl DataContext="{x:Static local:CoursesListViewModelDesign.Lists}" ItemsSource="{Binding Items}" x:Name="ListCourses" Background="AliceBlue" >
+        <ItemsControl DataContext="{x:Static core:CoursesListViewModelDesign.Lists}" ItemsSource="{Binding Items}" x:Name="ListCourses" Background="AliceBlue" >
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <local:CourseListItem/>
+                    <local:CourseListItem >
+                        
+                    </local:CourseListItem>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
             <ItemsControl.ItemsPanel>

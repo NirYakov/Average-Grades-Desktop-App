@@ -1,12 +1,12 @@
-﻿using System;
+﻿using GradesAverage.Core;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UtillsCalAvrg;
 
-namespace WpfTryStuff1
+namespace GradesAverage.Core
 {
     public class CoursesListViewModelDesign : CoursesListViewModel
     {
@@ -14,6 +14,14 @@ namespace WpfTryStuff1
 
         public CoursesListViewModelDesign()
         {
+           
+
+           fillData();
+        }
+
+        private void fillData()
+        {
+
             Items = new ObservableCollection<CourseItemViewModel>()
             {
             new CourseItemViewModel() { CourseName = ".Net & C#"   ,Mark= 92,Points = 3     ,Year = 2,Semester = eSemester.B},
@@ -26,14 +34,6 @@ namespace WpfTryStuff1
             new CourseItemViewModel() { CourseName = "Philosopy44", Mark = 50, Points = 2, Year = 1, Semester = eSemester.C },
             new CourseItemViewModel() { CourseName = "Philosopy", Mark = 90, Points = 2, Year = 1, Semester = eSemester.C },
             };
-
-           // fillData();
-        }
-
-        private void fillData()
-        {
-          
-
 
         }
 

@@ -1,11 +1,11 @@
-﻿using System;
+﻿using GradesAverage.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UtillsCalAvrg;
 
-namespace WpfTryStuff1
+namespace GradesAverage.Core
 {
     public class CourseItemViewModel
     {

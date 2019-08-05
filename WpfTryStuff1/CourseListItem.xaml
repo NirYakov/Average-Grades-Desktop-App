@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfTryStuff1"
+             xmlns:core="clr-namespace:GradesAverage.Core;assembly=GradesAverage.Core"
              Width="270"
              Height="120"
              mc:Ignorable="d">
@@ -17,12 +18,16 @@
     <!--<DropShadowEffect Color="Black" ></DropShadowEffect>-->
     <!--BorderBrush="Black" BorderThickness="1,1,1,1"-->
 
-    <Border DataContext="{x:Static local:CourseItemViewModelDesign.Instance}" Margin="10" BorderBrush="Silver" BorderThickness="0.5"  TextBlock.FontSize="17" TextBlock.Foreground="WhiteSmoke" CornerRadius="15" Padding="6" >
+    <Border d:DataContext="{x:Static core:CourseItemViewModelDesign.Instance}"
+            Margin="10" BorderBrush="Silver" BorderThickness="0.5"  
+            TextBlock.FontSize="17" TextBlock.Foreground="WhiteSmoke" 
+            TextBlock.FontWeight="SemiBold"  CornerRadius="15" Padding="6" >
 
         <Border.BitmapEffect>
 
             <DropShadowBitmapEffect Color="Black" Direction="320" 
-                                        ShadowDepth="7" Opacity=".7" Softness="5" />
+                                    ShadowDepth="7" Opacity=".7"
+                                    Softness="5" />
 
         </Border.BitmapEffect>
 
@@ -50,9 +55,15 @@
                 </StackPanel>
             </Border>
 
-            <Border TextBlock.FontSize="15" BorderBrush="Gold" BorderThickness="0.5" Margin="2" CornerRadius="9">
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <Border TextBlock.FontSize="15" BorderBrush="Gold" 
+                    BorderThickness="0.5" Margin="2" CornerRadius="9" >
+                <!--Background ="{StaticResource BackgroundLightBrush}"-->
+                    
+                
+                <!--<Border.Background = "{StaticResource RedPurple}" >-->
+                    <!--<LinearGradientBrush = "{StaticResource RedPurple}"/>-->
+
+                    <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <LinearGradientBrush.RelativeTransform>
                             <TransformGroup>
                                 <ScaleTransform CenterY="0.5" CenterX="0.5"/>
@@ -61,12 +72,16 @@
                                 <TranslateTransform/>
                             </TransformGroup>
                         </LinearGradientBrush.RelativeTransform>
-                        <!-- FF8B00FF -->
+                        --><!-- FF8B00FF -->
                         <!-- 222 -->
-                        <GradientStop Color="DarkCyan" Offset="0"/>
-                        <GradientStop Color="#FFFF004B" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+                        <!-- DarkCyan , DarkViolet --><!--
+                        <GradientStop Color="DarkViolet" Offset="0"/>
+
+                        --><!-- FFFF004B ,  --><!--
+                        
+                        <GradientStop Color="Crimson" Offset="1"/>
+                    </LinearGradientBrush>-->
+                <!--</Border.Background>-->
 
                 <Grid TextBlock.Foreground="Wheat">
                     <Grid.ColumnDefinitions>

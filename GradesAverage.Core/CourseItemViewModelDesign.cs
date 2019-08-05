@@ -1,10 +1,11 @@
-﻿using System;
+﻿using GradesAverage.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfTryStuff1
+namespace GradesAverage.Core
 {
     public class CourseItemViewModelDesign : CourseItemViewModel
     {
@@ -16,7 +17,7 @@ namespace WpfTryStuff1
             Mark = 87;
             Points = 4.5f;
             Year = 3;
-            Semester = UtillsCalAvrg.eSemester.B;
+            Semester = eSemester.B;
         }
     }
 }
