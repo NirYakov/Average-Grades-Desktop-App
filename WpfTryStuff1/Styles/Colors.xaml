@@ -1,0 +1,58 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfTryStuff1">
+
+    <Color x:Key="BackgroundLight">#efefef</Color>
+    <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLight}" />
+
+    <!--<Style TargetType="Button" >
+        <Setter Property="Background" Color
+    </Style>-->
+
+    <LinearGradientBrush x:Key="LinerayGradient2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                <RotateTransform Angle="60" CenterY="0.5" CenterX="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="Red" Offset="0.163"/>
+        <!-- FFFBFBFB -->
+        <GradientStop Color="#444" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LinerayGradient3" EndPoint="0.5,1" StartPoint="0.5,0">
+        <!-- FF7400FF -->
+        <!-- 111 -->
+        <GradientStop Color="DarkViolet" Offset="0"/>
+        <!-- FFFF004B -->
+        <GradientStop Color="#FFFF004B" Offset="1"/>
+
+    </LinearGradientBrush>
+
+
+    <LinearGradientBrush x:Key="Redpurple"
+                         StartPoint="0.5,0" EndPoint="0.5,1" >
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                <RotateTransform Angle="135" CenterY="0.5" CenterX="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <!-- FF8B00FF -->
+        <!-- 222 -->
+        <!-- DarkCyan , DarkViolet -->
+        <GradientStop Color="DarkViolet" Offset="0"/>
+
+        <!-- FFFF004B ,  -->
+
+        <GradientStop Color="Crimson" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BackgroundLightBrush2"  />
+
+</ResourceDictionary>

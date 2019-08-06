@@ -9,6 +9,8 @@
              Height="120"
              mc:Ignorable="d">
 
+    <!-- Order is important -->
+
     <!--Height="120"
              Width="270"-->
 
@@ -56,14 +58,14 @@
             </Border>
 
             <Border TextBlock.FontSize="15" BorderBrush="Gold" 
-                    BorderThickness="0.5" Margin="2" CornerRadius="9" >
-                <!--Background ="{StaticResource BackgroundLightBrush}"-->
-                    
-                
-                <!--<Border.Background = "{StaticResource RedPurple}" >-->
-                    <!--<LinearGradientBrush = "{StaticResource RedPurple}"/>-->
+                    BorderThickness="0.5" Margin="2" CornerRadius="9" 
+                Background ="{StaticResource Redpurple}">
 
-                    <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+
+                <!--<Border.Background = "{StaticResource RedPurple}" >-->
+                <!--<LinearGradientBrush = "{StaticResource RedPurple}"/>-->
+
+                <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <LinearGradientBrush.RelativeTransform>
                             <TransformGroup>
                                 <ScaleTransform CenterY="0.5" CenterX="0.5"/>
@@ -72,12 +74,16 @@
                                 <TranslateTransform/>
                             </TransformGroup>
                         </LinearGradientBrush.RelativeTransform>
-                        --><!-- FF8B00FF -->
-                        <!-- 222 -->
-                        <!-- DarkCyan , DarkViolet --><!--
+                        -->
+                <!-- FF8B00FF -->
+                <!-- 222 -->
+                <!-- DarkCyan , DarkViolet -->
+                <!--
                         <GradientStop Color="DarkViolet" Offset="0"/>
 
-                        --><!-- FFFF004B ,  --><!--
+                        -->
+                <!-- FFFF004B ,  -->
+                <!--
                         
                         <GradientStop Color="Crimson" Offset="1"/>
                     </LinearGradientBrush>-->
@@ -98,21 +104,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Silver" BorderThickness="0.5" CornerRadius="50" Height="12" Width="12">
-                                <Border.Background>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <LinearGradientBrush.RelativeTransform>
-                                            <TransformGroup>
-                                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                                                <RotateTransform Angle="60" CenterY="0.5" CenterX="0.5"/>
-                                                <TranslateTransform/>
-                                            </TransformGroup>
-                                        </LinearGradientBrush.RelativeTransform>
-                                        <GradientStop Color="Red" Offset="0.163"/>
-                                        <!-- FFFBFBFB -->
-                                        <GradientStop Color="#444" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </Border.Background>
+                                
                             </Border>
                             <StackPanel Orientation="Horizontal" Grid.Column="1">
                                 <TextBlock Text="Mark :  "/>
@@ -120,7 +112,7 @@
                                     <!--<TextBlock.Background>
                                         <SolidColorBrush Color="BlueViolet"/>
                                     </TextBlock.Background>-->
-                                    </TextBlock>
+                                </TextBlock>
                             </StackPanel>
                         </Grid>
                     </Border>
@@ -135,17 +127,10 @@
 
             <!-- Nice color DarkGoldenrod -->
 
-            <Border TextBlock.FontSize="15" BorderBrush="Gold" BorderThickness="0.5" Margin="2" CornerRadius="9">
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <!-- FF7400FF -->
-                        <!-- 111 -->
-                        <GradientStop Color="DarkViolet" Offset="0"/>
-                        <!-- FFFF004B -->
-                        <GradientStop Color="#FFFF004B" Offset="1"/>
-
-                    </LinearGradientBrush>
-                </Border.Background>
+            <Border TextBlock.FontSize="15" BorderBrush="{StaticResource BackgroundLightBrush}"
+                    BorderThickness="0.5" Margin="2" CornerRadius="9"
+                    Background="{StaticResource Redpurple}">
+                
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -159,7 +144,7 @@
 
                     <StackPanel Orientation="Horizontal" Grid.Column="1">
                         <TextBlock Text="Semester :  "/>
-                        <TextBlock Text="{Binding Semester}" x:Name="Semester0" /> 
+                        <TextBlock Text="{Binding Semester}" x:Name="Semester0" />
                     </StackPanel>
 
                 </Grid>

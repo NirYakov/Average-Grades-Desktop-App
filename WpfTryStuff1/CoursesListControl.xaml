@@ -23,22 +23,22 @@
     </Grid>-->
 
 
-
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <ItemsControl DataContext="{x:Static core:CoursesListViewModelDesign.Lists}" ItemsSource="{Binding Items}" x:Name="ListCourses" Background="AliceBlue" >
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <local:CourseListItem >
-                        
-                    </local:CourseListItem>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
-    </ScrollViewer>
+    <!--<Border Background="AliceBlue">-->
+    <Border>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ItemsControl DataContext="{x:Static core:CoursesListViewModelDesign.Lists}" ItemsSource="{Binding Items}" x:Name="ListCourses" >
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:CourseListItem/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+    </Border>
 
 </UserControl>
