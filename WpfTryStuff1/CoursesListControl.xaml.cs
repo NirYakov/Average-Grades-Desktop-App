@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
-
+using GradesAverage.Core;
 
 namespace WpfTryStuff1
 {
@@ -25,6 +25,8 @@ namespace WpfTryStuff1
         public CoursesListControl()
         {
             InitializeComponent();
+
+           // ListCourses.DataContext = new CoursesListViewModel();
         }
 
         public void InitData()
