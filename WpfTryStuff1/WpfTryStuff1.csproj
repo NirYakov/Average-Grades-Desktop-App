@@ -79,6 +79,8 @@
     <Compile Include="CourseListItem.xaml.cs">
       <DependentUpon>CourseListItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CoursesListViewModelDesignUi.cs" />
+    <Compile Include="CoursesListViewModelUi.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

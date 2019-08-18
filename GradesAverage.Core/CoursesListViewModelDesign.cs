@@ -35,6 +35,8 @@ namespace GradesAverage.Core
             new CourseItemViewModel() { CourseName = "Philosopy", Mark = 90, Points = 2, Year = 1, Semester = eSemester.C },
             };
 
+            Items = new ObservableCollection<CourseItemViewModel>( Items.OrderBy((n1) => -n1.Mark));
+
         }
 
 

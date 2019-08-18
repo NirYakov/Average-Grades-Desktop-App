@@ -23,19 +23,25 @@
     </Grid>-->
 
     <UserControl.DataContext>
-        <core:CoursesListViewModel/>
+        <local:CoursesListViewModelUi/>
     </UserControl.DataContext>
+
+    <!--<UserControl.DataContext>
+        <core:CoursesListViewModel/>
+    </UserControl.DataContext>-->
     
 
 
     <!--<Border Background="AliceBlue">-->
     <Border>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <!--<ItemsControl DataContext="{x:Static core:CoursesListViewModelDesign.Lists}" ItemsSource="{Binding Items}" x:Name="ListCourses" >-->
+            <!--<ItemsControl DataContext="{x:Static local:CoursesListViewModelDesignUi.Lists}" ItemsSource="{Binding Items}" x:Name="ListCourses" >-->
+            
             <!--DataContext="{Binding core:CoursesListViewModel.Items}"-->
-            <ItemsControl  x:Name="ListCourses" ItemsSource="{Binding Items}"
-                           >
-                           <!--DataContext="{Binding core:CoursesListViewModel}"-->
+            
+            <ItemsControl  x:Name="ListCourses" ItemsSource="{Binding Items}" >
+                           
+                <!--DataContext="{Binding core:CoursesListViewModel}"-->
                            <!-- d:DataContext="{x:Static core:CoursesListViewModelDesign.Lists}"-->
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
