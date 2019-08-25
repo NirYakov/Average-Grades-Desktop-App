@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="WpfTryStuff1.CourseListItem"
+﻿<UserControl x:Class="AverageGrades.CourseListItem"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfTryStuff1"
+             xmlns:local="clr-namespace:AverageGrades"
              xmlns:core="clr-namespace:GradesAverage.Core;assembly=GradesAverage.Core"
              Width="270"
              Height="120"
@@ -20,7 +20,26 @@
     <!--<DropShadowEffect Color="Black" ></DropShadowEffect>-->
     <!--BorderBrush="Black" BorderThickness="1,1,1,1"-->
 
-    <Border d:DataContext="{x:Static core:CourseItemViewModelDesign.Instance}"
+    <d:UserControl.DataContext>
+        <core:CourseItemViewModelDesign/>
+    </d:UserControl.DataContext>
+
+    <UserControl.Resources>
+        <!--<local:Besty/>-->
+        
+    </UserControl.Resources>
+
+    <!--<UserControl.Resources>-->
+        <!--<local:UshortToColor x:Key="MarkColorConver"/>--><!--
+        <wa:Besty/>
+    </UserControl.Resources>-->
+
+    <!--<UserControl.DataContext>
+        <core:CourseItemViewModel/>
+    </UserControl.DataContext>-->
+
+
+    <Border
             Margin="10" BorderBrush="Silver" BorderThickness="0.5"  
             TextBlock.FontSize="17" TextBlock.Foreground="WhiteSmoke" 
             TextBlock.FontWeight="SemiBold"  CornerRadius="15" Padding="6" >
@@ -103,9 +122,20 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
-                            <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Silver" BorderThickness="0.5" CornerRadius="50" Height="12" Width="12">
-                                
-                            </Border>
+                            <Border
+                                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                BorderBrush="Silver"
+                                BorderThickness="0.5" 
+                                CornerRadius="50" Height="12" Width="12"
+                                />
+
+                            <!--Background="{Binding ElementName=Mark0,
+                                Path=Text, Converter={StaticResource MarkColorConver}}"-->
+
+                            <!--Background="{Binding ElementName=checkboxColor,
+                                Path=IsChecked,
+                                Converter={StaticResource boolToColor}}" />-->
+
                             <StackPanel Orientation="Horizontal" Grid.Column="1">
                                 <TextBlock Text="Mark :  "/>
                                 <TextBlock Text="{Binding Mark, FallbackValue=100}"  x:Name="Mark0">
@@ -130,7 +160,7 @@
             <Border TextBlock.FontSize="15" BorderBrush="{StaticResource BackgroundLightBrush}"
                     BorderThickness="0.5" Margin="2" CornerRadius="9"
                     Background="{StaticResource Redpurple}">
-                
+
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>

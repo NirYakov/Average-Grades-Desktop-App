@@ -1,9 +1,9 @@
-﻿<Window x:Class="WpfTryStuff1.MainWindow"
+﻿<Window x:Class="AverageGrades.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfTryStuff1"
+        xmlns:local="clr-namespace:AverageGrades"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -15,7 +15,13 @@
 
     <!-- <local:CoursesListControl/> -->
 
-    <Window.Resources>
+    <!--<Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>-->
+
+    <!--#region some style , not for debug for now . -->
+
+    <!--<Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -23,26 +29,38 @@
                         <Border x:Name="BorderCorner"
                                 Padding="10"
                                 >
-                                <!--Background="AliceBlue"-->
+                                -->
+    <!--Background="AliceBlue"-->
+    <!--
 
                             <Grid >
                                 <Border CornerRadius="12" Background="AntiqueWhite" >
                                     <Border.Effect>
                                         <DropShadowEffect ShadowDepth="0.5" Opacity="0.4" />
-                                        
                                     </Border.Effect>
 
                                     <Grid >
                                         <Grid.RowDefinitions >
                                             <RowDefinition Height="42" />
+                                            
                                             <RowDefinition Height="auto"/>
+
+                                            <RowDefinition Height="60"/>
                                             <RowDefinition Height="*"/>
                                         </Grid.RowDefinitions>
 
-                                        <!--<Border Background="RoyalBlue"/>-->
+                                        -->
+    <!--<Border Background="RoyalBlue"/>-->
+    <!--
                                         <Border Background="RoyalBlue"/>
+
+                                        <StackPanel Margin="4" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" >
+                                            <Button Content="Add Course" FontSize="16"
+                                                    Command="{Binding AddCommand}"/>
+                                        </StackPanel>
+
                                         <Border Height="2" Grid.Row="1" Background="Aqua"/>
-                                        <local:CoursesListControl Grid.Row="3"></local:CoursesListControl>
+                                        <local:CoursesListControl Grid.Row="3" OverridesDefaultStyle="False"/>
 
                                     </Grid>
                                     
@@ -56,20 +74,49 @@
             </Setter>
 
         </Style>
-    </Window.Resources>
+    </Window.Resources>-->
 
-    <WindowChrome.WindowChrome>
+    <!--<WindowChrome.WindowChrome>
         <WindowChrome
             ResizeBorderThickness="60"
             CaptionHeight="42"
             GlassFrameThickness="0"
             />
-    </WindowChrome.WindowChrome>
+    </WindowChrome.WindowChrome>-->
 
 
-    <Grid Background="Red">
+    <!--<Grid Background="Red">
         <Button Background="Brown" Content="LOL"/>
+    </Grid>-->
+
+    <!--#endregion-->
+
+
+
+    <Grid >
+        <Grid.RowDefinitions >
+            <RowDefinition Height="42" />
+
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Border Background="RoyalBlue"/>
+
+        <StackPanel Margin="4" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Content="Add Course" FontSize="16"
+                    Command="{Binding AddCommand}"/>
+        </StackPanel>
+
+        <Border Height="2" Grid.Row="1" Background="Aqua"/>
+        <local:CoursesListControl Grid.Row="3" OverridesDefaultStyle="False"/>
+
     </Grid>
+
+
 
 
 </Window>

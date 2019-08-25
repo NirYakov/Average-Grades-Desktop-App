@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 
-namespace WpfTryStuff1
+namespace AverageGrades
 {
     public class CoursesListViewModelUi
     {

@@ -12,6 +12,8 @@ namespace GradesAverage.Core
     {
         public static CoursesListViewModelDesign Lists => new CoursesListViewModelDesign();
 
+
+
         public CoursesListViewModelDesign()
         {
            

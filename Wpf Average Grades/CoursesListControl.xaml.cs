@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using GradesAverage.Core;
 
-namespace WpfTryStuff1
+namespace AverageGrades
 {
     /// <summary>
     /// Interaction logic for CoursesListControl.xaml

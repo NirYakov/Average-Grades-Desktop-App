@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfTryStuff1.Properties
+namespace AverageGrades.Properties
 {
 
 

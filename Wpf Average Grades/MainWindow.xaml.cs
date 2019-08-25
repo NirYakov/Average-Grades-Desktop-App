@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfTryStuff1
+namespace AverageGrades
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
