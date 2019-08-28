@@ -7,8 +7,14 @@
              xmlns:core="clr-namespace:GradesAverage.Core;assembly=GradesAverage.Core"
              Width="270"
              Height="120"
-             mc:Ignorable="d">
+             mc:Ignorable="d"
+             MouseRightButtonUp="UserControl_MouseDoubleClick"
+             
+             >
 
+            <!--MouseMove="UserControl_MouseMove"-->
+    
+    
     <!-- Order is important -->
 
     <!--Height="120"
@@ -25,14 +31,9 @@
     </d:UserControl.DataContext>
 
     <UserControl.Resources>
-        <!--<local:Besty/>-->
-        
+        <local:BestConvert x:Key="bestConvert"/>
     </UserControl.Resources>
 
-    <!--<UserControl.Resources>-->
-        <!--<local:UshortToColor x:Key="MarkColorConver"/>--><!--
-        <wa:Besty/>
-    </UserControl.Resources>-->
 
     <!--<UserControl.DataContext>
         <core:CourseItemViewModel/>
@@ -127,10 +128,9 @@
                                 BorderBrush="Silver"
                                 BorderThickness="0.5" 
                                 CornerRadius="50" Height="12" Width="12"
-                                />
 
-                            <!--Background="{Binding ElementName=Mark0,
-                                Path=Text, Converter={StaticResource MarkColorConver}}"-->
+                            Background="{Binding ElementName=Mark0,
+                                Path=Text, Converter={StaticResource bestConvert}}"/>
 
                             <!--Background="{Binding ElementName=checkboxColor,
                                 Path=IsChecked,

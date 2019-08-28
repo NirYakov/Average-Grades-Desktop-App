@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using GradesAverage.Core;
+using System.Diagnostics;
 
 namespace AverageGrades
 {
@@ -81,6 +82,18 @@ namespace AverageGrades
             //    index++;
             //    _collection.Add(var0);
             //}
+
+        }
+
+        private void CourseListItem_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //  Debug.WriteLine($"Clicked [{sender}]");
+
+            CourseListItem item = sender as CourseListItem;
+            if (item != null)
+            {
+                Debug.WriteLine($"Clicked [{item.CourseName0.Text}]");
+            }
 
         }
     }

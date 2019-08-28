@@ -29,7 +29,7 @@ namespace GradesAverage.Core
             new CourseItemViewModel() { CourseName = ".Net & C#"   ,Mark= 92,Points = 3     ,Year = 2,Semester = eSemester.B},
             new CourseItemViewModel() { CourseName = "Graph theory", Mark = 80, Points = 3.5f, Year = 2, Semester = eSemester.A },
             new CourseItemViewModel() { CourseName = "Linery", Mark = 61, Points = 5, Year = 1, Semester = eSemester.A },
-            new CourseItemViewModel() { CourseName = "C++", Mark = 99, Points = 5, Year = 2, Semester = eSemester.A },
+            new CourseItemViewModel() { CourseName = "C++", Mark = 999, Points = 5, Year = 2, Semester = eSemester.A },
             new CourseItemViewModel() { CourseName = "Prog c", Mark = 79, Points = 5, Year = 1, Semester = eSemester.A },
             new CourseItemViewModel() { CourseName = "C pro", Mark = 90, Points = 4f, Year = 1, Semester = eSemester.B },
             new CourseItemViewModel() { CourseName = "Data Structs", Mark = 85, Points = 4f, Year = 1, Semester = eSemester.B },

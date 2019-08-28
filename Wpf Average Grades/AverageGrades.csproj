@@ -57,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BestConvert.cs" />
     <Compile Include="CoursesListControl.xaml.cs">
       <DependentUpon>CoursesListControl.xaml</DependentUpon>
     </Compile>

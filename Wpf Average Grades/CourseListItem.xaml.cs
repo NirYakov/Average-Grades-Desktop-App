@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using GradesAverage.Core;
+
 namespace AverageGrades
 {
     /// <summary>
@@ -23,6 +26,22 @@ namespace AverageGrades
         public CourseListItem()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DoingSomething(sender);
+        }
+
+        private void UserControl_MouseMove(object sender, MouseEventArgs e)
+        {
+            DoingSomething(sender);
+        }
+
+        private void DoingSomething(object sender)
+        {
+            Debug.WriteLine($"Clicked [{((CourseListItem)sender).CourseName0.Text}]");
+
         }
 
 

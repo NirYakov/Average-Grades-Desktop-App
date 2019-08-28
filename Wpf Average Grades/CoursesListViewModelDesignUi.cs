@@ -17,16 +17,44 @@ namespace AverageGrades
 
        // public static CoursesListViewModelDesignUi Lists { get; }
 
-        public void AddMoreOne(/*CourseItemViewModel i_Add*/)
+        public RelayCommand<object> AddMoreCou { get; }
+
+        private int index = 0; 
+
+        public void AddMoreOne(object obj/*CourseItemViewModel i_Add*/)
         {
-           // Application.Current.Dispatcher.Invoke(() =>
+            CourseListItem item = obj as CourseListItem;
+
+            CourseItemViewModel itemViewModel = obj as CourseItemViewModel;
+
+                Debug.WriteLine($"Clicked , string 2 see [{obj}]");
+
+            if (itemViewModel != null)
             {
-                Items.Add(new CourseItemViewModel() { CourseName = "blankOOOO" });
+                Debug.WriteLine($"Clicked -itemViewModel- [{itemViewModel.CourseName} , {itemViewModel.Mark}]");
+            }
+
+            
+
+            if (item != null)
+            {
+                Debug.WriteLine($"Clicked [{(item).CourseName0.Text}]");
+            }
+            else
+            {
+                Debug.WriteLine("Nothing ...");
+
+            }
+
+
+           Application.Current.Dispatcher.Invoke(() =>
+            {
+                Items.Add(new CourseItemViewModel() { CourseName = $"blank --> {index++}" });
+                Items.Remove(itemViewModel);
 
                // Items.Add(i_Add);
-               
             }
-            //);
+            );
         }
 
         static CoursesListViewModelDesignUi()
@@ -37,6 +65,8 @@ namespace AverageGrades
         public CoursesListViewModelDesignUi()
         {
             fillData();
+
+            AddMoreCou = new RelayCommand<object>(AddMoreOne);
         }
 
         private void fillData()
@@ -99,7 +129,7 @@ namespace AverageGrades
                     //    break;
                     case 1:
                         Items.Add(new CourseItemViewModel() { CourseName = "blank" });
-                        AddMoreOne();
+                        AddMoreOne(null);
                         break;
                 }
             });

@@ -1,29 +1,9 @@
 Next things are
 
-	to fix the command , and add more courses
-	dynamic and visual added courses.
+	need to add saving and load . 
+		
 
 
-	to keep .
-
-	  public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            ushort mark = (ushort)(value);
-            SolidColorBrush color = new SolidColorBrush(Colors.Red);
-
-            if (mark >= 90)
-            {
-                color.Color = Colors.Green;
-            }
-            else if (mark >= 80)
-            {
-                color.Color = Colors.AliceBlue;
-            }
-
-            return color;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
+	optional later -
+	try to add item form the outside of the 'CoursesListControl' , try to add them 
+	from  the mainWindow .

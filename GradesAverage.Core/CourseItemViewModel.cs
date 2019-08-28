@@ -18,6 +18,11 @@ namespace GradesAverage.Core
         public short Year { get; set; }
 
         public eSemester Semester { get; set; }
+
+        public override string ToString()
+        {
+            return CourseName;
+        }
     }
 
     //public enum eSemester : ushort

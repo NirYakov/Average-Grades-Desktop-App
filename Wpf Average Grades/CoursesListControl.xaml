@@ -7,7 +7,7 @@
              xmlns:core="clr-namespace:GradesAverage.Core;assembly=GradesAverage.Core"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="600">
- 
+
     <!--#region some tests -->
     <!--<ItemsControl Margin="20" x:Name="ListCourses">-->
 
@@ -37,37 +37,107 @@
     </UserControl.DataContext>-->
 
     <!--#endregion-->
-    
+
     <UserControl.DataContext>
         <!--<core:CoursesListViewModelDesign/>-->
         <local:CoursesListViewModelDesignUi/>
     </UserControl.DataContext>
-    
+
 
 
     <!--<Border Background="AliceBlue">-->
     <Border>
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Width="100" Height="40" Content="Add"
+                Command="{Binding AddMoreCou}"
+                />
+
+            <Button  Width="100" Content="Remove try"
+                     HorizontalAlignment="Right" Margin=" 0 0 40 0"
+                     Command="{Binding AddMoreCou}"
+                     CommandParameter="{Binding ElementName=ListCourses, Path=SelectedItem}"
+                     />
+
+
             <!--<ItemsControl DataContext="{x:Static local:CoursesListViewModelDesignUi.Lists}" ItemsSource="{Binding Items}" x:Name="ListCourses" >-->
-            
+
             <!--DataContext="{Binding core:CoursesListViewModel.Items}"-->
 
-            <ItemsControl x:Name="ListCourses" ItemsSource="{Binding Items}" >
-                           
-                <!--DataContext="{Binding core:CoursesListViewModel}"-->
-                           <!-- d:DataContext="{x:Static core:CoursesListViewModelDesign.Lists}"-->
-                <ItemsControl.ItemTemplate>
+
+            <ListBox ItemsSource="{Binding Items}" Grid.Row="1" x:Name="ListCourses" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     Background="Transparent" BorderBrush="Transparent"
+                     >
+                <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <local:CourseListItem/>
+                            <local:CourseListItem/>
                     </DataTemplate>
-                </ItemsControl.ItemTemplate>
-                <ItemsControl.ItemsPanel>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel/>
+                        <WrapPanel IsItemsHost="True" Orientation="Horizontal"  />
                     </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-            </ItemsControl>
-        </ScrollViewer>
+                </ListBox.ItemsPanel>
+            </ListBox>
+
+
+            <!--#region this is what was and worked-->
+            <!--
+            
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible">
+                    <ItemsControl x:Name="ListCourses" ItemsSource="{Binding Items}" ScrollViewer.VerticalScrollBarVisibility="Visible" >
+                    -->
+            <!--DataContext="{Binding core:CoursesListViewModel}"-->
+            <!-- d:DataContext="{x:Static core:CoursesListViewModelDesign.Lists}"-->
+            <!--
+
+
+
+                    <ItemsControl.ItemTemplate >
+                    
+                    <DataTemplate>
+
+                            <local:CourseListItem MouseDown="CourseListItem_MouseDown"
+                                                  />
+
+                        </DataTemplate>
+                            
+                        </ItemsControl.ItemTemplate>
+                    
+                        
+                        <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                
+                </ItemsControl>
+            </ScrollViewer>
+            -->
+            <!--#endregion-->
+
+        </Grid>
     </Border>
+
+    <!--#region try some help from the web-->
+    <!--<ListBox ItemsSource="{Binding MovieList}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Orientation="Vertical">
+                    <Image Source="{Binding Image}" Stretch="None"/>
+                    <Label Content="{Binding TitleWithYear}"/>
+                </StackPanel>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+        <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel IsItemsHost="True" Orientation="Horizontal"  />
+            </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+    </ListBox>-->
+    <!--#endregion-->
 
 </UserControl>
