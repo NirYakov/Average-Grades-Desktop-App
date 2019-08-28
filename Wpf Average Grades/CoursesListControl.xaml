@@ -39,9 +39,13 @@
     <!--#endregion-->
 
     <UserControl.DataContext>
-        <!--<core:CoursesListViewModelDesign/>-->
-        <local:CoursesListViewModelDesignUi/>
+        <core:CoursesListViewModel/>
+        <!--<local:CoursesListViewModelDesignUi/>-->
     </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <local:MulityValuesConvert x:Key="MulitConverter"/>
+    </UserControl.Resources>
 
 
 
@@ -52,28 +56,76 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Width="100" Height="40" Content="Add"
-                Command="{Binding AddMoreCou}"
-                />
+            <StackPanel Height="60" Grid.Row="0" Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        >
+                <Button  Width="60" Content="Add"
+                Command="{Binding AddCourseCommand }">
 
-            <Button  Width="100" Content="Remove try"
-                     HorizontalAlignment="Right" Margin=" 0 0 40 0"
-                     Command="{Binding AddMoreCou}"
+                    <Button.CommandParameter>
+                        <MultiBinding Converter="{StaticResource MulitConverter}" >
+                            <Binding Path="Text" ElementName="textBoxCourseName"/>
+                            <Binding Path="Text" ElementName="textBoxMark" />
+                            <Binding Path="Text" ElementName="textBoxPoints"/>
+                            <Binding Path="Text" ElementName="textBoxYear" />
+                        </MultiBinding>
+                    </Button.CommandParameter>
+
+                </Button>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="240"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel x:Name="LeadPanel" Background="Yellow"  Orientation="Horizontal">
+                        <TextBlock Margin="5 0 0 0" Width="90" Text="Course Name :  "/>
+                        <TextBox Width="200" x:Name="textBoxCourseName" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Background="{Binding Background, ElementName=LeadPanel}"
+                                Grid.Row="1" Grid.Column="0" >
+
+                        <TextBlock Margin="5 0 0 0" Width="90" Text="Mark :  "/>
+
+                        <TextBox Width="200" x:Name="textBoxMark" />
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" 
+                        Background="{Binding Background, ElementName=LeadPanel}"  Grid.Row="0" Grid.Column="1" >
+                        <TextBlock Margin="5 0 0 0" Text="Points :  "/>
+                        <TextBox Width="200" x:Name="textBoxPoints"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                        Background="{Binding Background, ElementName=LeadPanel}" Grid.Row="1" Grid.Column="1" >
+                        <TextBlock Margin="5 0 0 0" Text="Year :  "/>
+                        <TextBox Width="200"  x:Name="textBoxYear" />
+                    </StackPanel>
+
+                </Grid>
+
+
+                <Button Width="60" Content="Remove"
+                     HorizontalAlignment="Right"
+                     Command="{Binding RemoveCourseCommand}"
                      CommandParameter="{Binding ElementName=ListCourses, Path=SelectedItem}"
                      />
-
-
-            <!--<ItemsControl DataContext="{x:Static local:CoursesListViewModelDesignUi.Lists}" ItemsSource="{Binding Items}" x:Name="ListCourses" >-->
-
-            <!--DataContext="{Binding core:CoursesListViewModel.Items}"-->
-
+            </StackPanel>
 
             <ListBox ItemsSource="{Binding Items}" Grid.Row="1" x:Name="ListCourses" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                     Background="Transparent" BorderBrush="Transparent"
-                     >
+                     Background="Transparent" BorderBrush="Transparent" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                            <local:CourseListItem/>
+                        <local:CourseListItem/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
                 <ListBox.ItemsPanel>

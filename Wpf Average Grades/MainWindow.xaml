@@ -30,7 +30,9 @@
                                 Padding="10"
                                 >
                                 
-    --><!--Background="AliceBlue"--><!--
+    -->
+    <!--Background="AliceBlue"-->
+    <!--
     
 
                             <Grid >
@@ -93,9 +95,8 @@
 
 
     <!--#region the Layout that work for now  -->
-    
+
     <Window.Resources>
-        <local:CoursesListViewModelDesignUi x:Key="CKey" />
     </Window.Resources>
 
     <Grid >
@@ -111,8 +112,6 @@
 
         <Border Background="RoyalBlue"/>
         <StackPanel Margin="4" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" >
-            <Button Content="Add Course" FontSize="16" 
-                    Command="{Binding}"/>
         </StackPanel>
 
         <Border Height="2" Grid.Row="1" Background="Aqua" />
@@ -121,7 +120,7 @@
 
     </Grid>
 
-<!--#endregion-->
+    <!--#endregion-->
 
 
 </Window>

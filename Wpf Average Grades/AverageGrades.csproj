@@ -57,11 +57,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BestConvert.cs" />
+    <Compile Include="Value Converters\BestConvert.cs" />
     <Compile Include="CoursesListControl.xaml.cs">
       <DependentUpon>CoursesListControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RelayCommand.cs" />
+    <Compile Include="Value Converters\MulityValuesConvert.cs" />
     <Page Include="CourseListItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,7 +81,6 @@
     <Compile Include="CourseListItem.xaml.cs">
       <DependentUpon>CourseListItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CoursesListViewModelDesignUi.cs" />
     <Compile Include="CoursesListViewModelUi.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

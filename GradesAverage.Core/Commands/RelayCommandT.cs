@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace AverageGrades
+namespace GradesAverage.Core
 {
     public class RelayCommand<T> : ICommand
     {
@@ -30,5 +30,14 @@ namespace AverageGrades
         {
             ExecuteCommand.Invoke((T)parameter);
         }
+
+        public void RaiseCanExecuteChanged()
+        {
+            if (CanExecuteChanged != null)
+            {
+                CanExecuteChanged(this, EventArgs.Empty);
+            }
+        }
     }
 }
+
