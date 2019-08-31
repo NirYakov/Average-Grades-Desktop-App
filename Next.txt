@@ -1,5 +1,6 @@
 Next things are
 
+	add condition that if you have the course you can't have same name course.
 	need to add saving and load . 
 		
 

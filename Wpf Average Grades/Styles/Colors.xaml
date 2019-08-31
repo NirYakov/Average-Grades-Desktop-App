@@ -5,6 +5,12 @@
     <Color x:Key="BackgroundLight">#efefef</Color>
     <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLight}" />
 
+    <Color x:Key="BackgroundTexts" >Yellow</Color>
+    <SolidColorBrush x:Key="BackgroundTextsBrush" Color="{StaticResource BackgroundTexts}" />
+
+    <Color x:Key="BackgroundTextBox" >White</Color>
+    <SolidColorBrush x:Key="BackgroundTextBoxBrush" Color="{StaticResource BackgroundTextBox}"/>
+
     <!--<Style TargetType="Button" >
         <Setter Property="Background" Color
     </Style>-->

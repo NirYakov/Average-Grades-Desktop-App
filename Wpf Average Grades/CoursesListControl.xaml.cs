@@ -26,63 +26,6 @@ namespace AverageGrades
         public CoursesListControl()
         {
             InitializeComponent();
-
-           // ListCourses.DataContext = new CoursesListViewModel();
-        }
-
-        public void InitData()
-        {
-
-        }
-
-        private void DataFill0()
-        {
-            //List<CourseListItem> items = new List<CourseListItem>();
-            //Thickness thick = new Thickness(0);
-
-            //items.Add(new CourseListItem());
-            //items.Add(new CourseListItem());
-
-            //items.Add(new CourseListItem());
-            //items.Add(new CourseListItem());
-
-            //items.Add(new CourseListItem());
-            //items.Add(new CourseListItem());
-
-            //items.Add(new CourseListItem());
-            //items.Add(new CourseListItem());
-
-            //items.Add(new CourseListItem());
-            //items.Add(new CourseListItem());
-
-            //CourseListItem item = new CourseListItem();
-
-
-            //items.Add(item);
-
-
-            //ListCourses.Items.Clear();
-            //ListCourses.ItemsSource = new ObservableCollection<CourseListItem>(items);
-
-
-            //ObservableCollection<CourseListItem> _collection;
-
-            //_collection = new ObservableCollection<CourseListItem>();
-
-
-            //DataContext = _collection;
-
-            //int index = 0;
-
-            //foreach (CourseListItem var0 in items)
-            //{
-            //    var0.CourseName0.Text = $"{index + 10}";
-            //    var0.Points0.Text = $"{index + 2.5}";
-            //    var0.Mark0.Text = $"{index * 10 }";
-            //    index++;
-            //    _collection.Add(var0);
-            //}
-
         }
 
         private void CourseListItem_MouseDown(object sender, MouseButtonEventArgs e)

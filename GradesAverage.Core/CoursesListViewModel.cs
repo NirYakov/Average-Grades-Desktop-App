@@ -10,7 +10,7 @@ namespace GradesAverage.Core
 {
     public class CoursesListViewModel
     {
-        public ObservableCollection<CourseItemViewModel> Items { get; set; }
+        public ObservableCollection<CourseItemViewModel> Items { get; private set; }
 
         public RelayCommand<CourseItemViewModel> AddCourseCommand { get; }
 
@@ -19,7 +19,8 @@ namespace GradesAverage.Core
         public CoursesListViewModel()
         {
             /*AddCourseCommand*/
-            AddCourseCommand = new RelayCommand<CourseItemViewModel>(AddMoreOne);
+            AddCourseCommand = new RelayCommand<CourseItemViewModel>(AddMoreOne/* , CheckToAddCourse */);
+
             RemoveCourseCommand = new RelayCommand<CourseItemViewModel>(RemoveCourse);
 
             Items = new ObservableCollection<CourseItemViewModel>()
@@ -29,8 +30,32 @@ namespace GradesAverage.Core
             new CourseItemViewModel() { CourseName = "Third is here ", Mark = 83, Points = 3.5f, Year = 3, Semester = eSemester.A },
             new CourseItemViewModel() { CourseName = "Fore to see long text input.", Mark = 77, Points = 2f, Year = 2, Semester = eSemester.C },
             };
+
+           // try
+            {
+             //   Items = StaticSaverTest.DataMeneger.LoadData();
+                 //StaticSaverTest.DataMeneger.SaveData(Items);
+            }
+           // catch (Exception ex)
+            {
+
+            }
+
+
+            // Items = new ObservableCollection<CourseItemViewModel>(Items.OrderBy(n => n.Mark));
+
+
+           // initItemsList();
         }
 
+        private void initItemsList()
+        {
+
+            Items = new ObservableCollection<CourseItemViewModel>(Items.OrderBy(n => n.Mark));
+
+
+            // throw new NotImplementedException();
+        }
 
         private int index = 0;
 
@@ -41,24 +66,47 @@ namespace GradesAverage.Core
                 Items.Add(i_ParametersAry);
             }
 
-            Items.Add(new CourseItemViewModel() { CourseName = $"blank --> {index++}" });
+            // StaticSaverTest.DataMeneger.SaveData(Items);
+
+            //Items.Add(new CourseItemViewModel() { CourseName = $"blank --> {index++}" });
         }
 
 
         public bool CheckToAddCourse(CourseItemViewModel i_Params)
         {
             // BM : to add condition for the added courses.
+            bool canAdd = true;
+            if (i_Params != null)
+            {
+                if (!(0 >= i_Params.Mark && i_Params.Mark <= 100))
+                {
+                    canAdd = false;
+                }
 
-            throw new NotImplementedException();
+                if (!(0 >= i_Params.Points && i_Params.Points <= 12))
+                {
+                    canAdd = false;
+                }
+            }
+            else
+            {
+                canAdd = false;
+            }
+
+            return canAdd;
         }
 
         public void RemoveCourse(CourseItemViewModel i_ToDelete)
         {
             // BM : To remember to delete from the total Average
+
+
+
             Items.Remove(i_ToDelete);
+
         }
 
-// Dont work , not waste time for now .
+        // Dont work , not waste time for now .
         public void SortListDontWork()
         {
             List<CourseItemViewModel> list; // ICollection<CourseItemViewModel>(); // List<CourseItemViewModel>();
