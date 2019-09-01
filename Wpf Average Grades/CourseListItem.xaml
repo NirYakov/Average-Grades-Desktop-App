@@ -27,7 +27,7 @@
     <!--BorderBrush="Black" BorderThickness="1,1,1,1"-->
 
     <d:UserControl.DataContext>
-        <core:CourseItemViewModelDesign/>
+        <core:CourseItemViewModelDesign />
     </d:UserControl.DataContext>
 
     <UserControl.Resources>

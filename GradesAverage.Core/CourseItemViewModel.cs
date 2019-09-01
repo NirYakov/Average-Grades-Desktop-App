@@ -9,26 +9,45 @@ namespace GradesAverage.Core
 {
     public class CourseItemViewModel
     {
-        public string CourseName { get; set; }
+        private readonly Course r_Course;
 
-        public ushort Mark { get; set; } = 24;
+        public CourseItemViewModel()
+        {
+            r_Course = new Course();
+        }
 
-        public float Points { get; set; }
+        public string CourseName
+        {
+            get { return r_Course.CourseName; }
+            set { r_Course.CourseName = value; }
+        }
 
-        public short Year { get; set; }
+        public ushort Mark {
+            get { return r_Course.Mark; }
+            set { r_Course.Mark = value; }
+        }
 
-        public eSemester Semester { get; set; }
+        public float Points
+        {
+            get { return r_Course.Points; }
+            set { r_Course.Points = value; }
+        }
+
+        public short Year {
+            get { return r_Course.Year; }
+            set { r_Course.Year = value; }
+        }
+
+        public eSemester Semester {
+            get { return r_Course.Semester; }
+            set { r_Course.Semester = value; }
+        }
+
+        public float Delta { get => r_Course.DeltaToMaxMarkValue; }
 
         public override string ToString()
         {
-            return CourseName;
+            return r_Course.ToString() ;
         }
     }
-
-    //public enum eSemester : ushort
-    //{
-    //    A  = 'A',
-    //    B  = 'B',
-    //    C = 'C'
-    //}
 }

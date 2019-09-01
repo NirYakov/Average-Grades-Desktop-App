@@ -39,8 +39,12 @@
     <!--#endregion-->
 
     <UserControl.DataContext>
-        <core:CoursesListViewModel/>
-        <!--<local:CoursesListViewModelDesignUi/>-->
+        <!--<core:CoursesListViewModel />-->
+
+        <!--<core:CoursesListViewModelDesign/>-->
+
+
+        <local:CoursesListViewModelUi/>
     </UserControl.DataContext>
 
     <UserControl.Resources>
@@ -62,96 +66,134 @@
     <Border>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <!--#region Add Course Stuff -->
-            <Expander>
-                <StackPanel Grid.Row="0"
+            <Border>
+                <StackPanel TextBlock.FontSize="20" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Average :" Foreground="White" Background="Crimson"/>
+                    <TextBlock Text="{Binding CalAverage}" Foreground ="Black" Background="Wheat"  Margin="2 0 0 0"/>
+                    <TextBlock Text="Points :" Foreground="White" Background="Blue" Margin="200 0 0 0"/>
+                    <TextBlock Text="{Binding CalAverage.PointsTotal}" Foreground ="Black" Background="Wheat"  Margin="2 0 0 0"/>
+
+                </StackPanel>
+            </Border>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--#region Add Course Stuff -->
+                <Expander>
+                    <StackPanel Grid.Row="0"
                         >
 
-                    <!--<Grid.ColumnDefinitions>
+                        <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition Width= "1*"/>
                     <ColumnDefinition Width= "60"/>
                     <ColumnDefinition Width= "60"/>
                 </Grid.ColumnDefinitions>-->
 
 
-                    <!--HorizontalAlignment="Center"-->
+                        <!--HorizontalAlignment="Center"-->
 
 
-                    <Grid Grid.Column="0" TextBlock.FontSize = "17">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="30"/>
-                        </Grid.RowDefinitions>
+                        <Grid Grid.Column="0" TextBlock.FontSize = "17">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
 
 
 
-                        <Grid >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="130"/>
-                                <ColumnDefinition Width ="1*"/>
-                            </Grid.ColumnDefinitions>
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="130"/>
+                                    <ColumnDefinition Width ="1*"/>
+                                </Grid.ColumnDefinitions>
 
-                            <Border Background="{StaticResource BackgroundTextsBrush}" >
-                                <TextBlock Grid.Column="0" Text="Course Name :"
+                                <Border Background="{StaticResource BackgroundTextsBrush}" >
+                                    <TextBlock Grid.Column="0" Text="Course Name :"
                                    HorizontalAlignment="Center" VerticalAlignment="Center"
                                    />
-                            </Border>
-                            <TextBox Background="{StaticResource BackgroundTextBoxBrush}" Grid.Column="1" 
+                                </Border>
+                                <TextBox Background="{StaticResource BackgroundTextBoxBrush}" Grid.Column="1" 
                                  x:Name="textBoxCourseName"
                                      />
-                        </Grid>
+                            </Grid>
 
-                        <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="70"/>
-                                <ColumnDefinition Width ="50"/>
-                                <ColumnDefinition Width ="70"/>
-                                <ColumnDefinition Width ="50"/>
-                                <ColumnDefinition Width ="70"/>
-                                <ColumnDefinition Width ="50"/>
-                                <ColumnDefinition Width ="100"/>
-                                <ColumnDefinition Width ="*"/>
-                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width ="50"/>
+                                    <ColumnDefinition Width ="70"/>
+                                    <ColumnDefinition Width ="50"/>
+                                    <ColumnDefinition Width ="70"/>
+                                    <ColumnDefinition Width ="50"/>
+                                    <ColumnDefinition Width ="100"/>
+                                    <ColumnDefinition Width ="40"/>
+                                </Grid.ColumnDefinitions>
 
 
-                            <Border Grid.Column="0" Background="{StaticResource BackgroundTextsBrush}" >
-                                <TextBlock Text="Mark :"
+                                <Border Grid.Column="0" Background="{StaticResource BackgroundTextsBrush}" >
+                                    <TextBlock Text="Mark :"
                                   HorizontalAlignment="Center" VerticalAlignment="Center"
                                    />
-                            </Border>
-                            <TextBox Grid.Column="1" x:Name="textBoxMark" />
+                                </Border>
+                                <TextBox Grid.Column="1" x:Name="textBoxMark" Text=" 360" />
 
 
-                            <Border Background="{StaticResource BackgroundTextsBrush}" Grid.Column="2" >
-                                <TextBlock Text="Points :"
+                                <Border Background="{StaticResource BackgroundTextsBrush}" Grid.Column="2" >
+                                    <TextBlock Text="Points :"
                                  
                                        HorizontalAlignment="Center" VerticalAlignment="Center"
                                    />
-                            </Border>
-                            <TextBox Background="{StaticResource BackgroundTextBoxBrush}" Grid.Column="3"
-                                 x:Name="textBoxPoints" Text="120.5"/>
+                                </Border>
+                                <TextBox Background="{StaticResource BackgroundTextBoxBrush}" Grid.Column="3"
+                                 x:Name="textBoxPoints" Text="0006"/>
 
-                            <Border Background="{StaticResource BackgroundTextsBrush}" Grid.Column="4" >
-                                <TextBlock  Text="Year :"
+                                <Border Background="{StaticResource BackgroundTextsBrush}" Grid.Column="4" >
+                                    <TextBlock  Text="Year :"
                                         HorizontalAlignment="Center" VerticalAlignment="Center"
                                         />
-                            </Border>
-                            <TextBox Background="{StaticResource BackgroundTextBoxBrush}" Grid.Column="5" 
-                                 x:Name="textBoxYear"  Text="1020"/>
+                                </Border>
 
-                            <Border Background="{StaticResource BackgroundTextsBrush}" Grid.Column="6" >
-                                <TextBlock  Text="Semester :"
+                                <ComboBox Grid.Column="5"  x:Name="textBoxYear" SelectedIndex="0">
+                                    <ComboBoxItem Content="1"/>
+                                    <ComboBoxItem Content="2"/>
+                                    <ComboBoxItem Content="3"/>
+                                    <ComboBoxItem Content="4"/>
+                                    <ComboBoxItem Content="5"/>
+                                    <ComboBoxItem Content="6"/>
+                                    <ComboBoxItem Content="7"/>
+                                    <ComboBoxItem Content="8"/>
+                                    <ComboBoxItem Content="9"/>
+                                    <ComboBoxItem Content="10"/>
+                                    <ComboBoxItem Content="11"/>
+                                    <ComboBoxItem Content="12"/>
+                                </ComboBox>
+
+                                <!--<TextBox Background="{StaticResource BackgroundTextBoxBrush}" Grid.Column="5" 
+                                 x:Name="textBoxYear"  Text="1020"/>-->
+
+                                <Border Background="{StaticResource BackgroundTextsBrush}" Grid.Column="6" >
+                                    <TextBlock  Text="Semester :"
                                         HorizontalAlignment="Center" VerticalAlignment="Center"
                                         />
 
-                            </Border>
+                                </Border>
 
-                            <Border Grid.Column="7" Background="GhostWhite">
-                                <Grid>
+                                <Border Grid.Column="7" Background="GhostWhite">
+                                    <ComboBox x:Name = "comboBoxSemester" SelectedIndex="0"  >
+                                        <ComboBoxItem Content="A"/>
+                                        <ComboBoxItem Content="B"/>
+                                        <ComboBoxItem Content="C"/>
+                                    </ComboBox>
+
+                                    <!--<Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
@@ -162,60 +204,64 @@
                                     <RadioButton Content="B" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
                                     <RadioButton Content="C" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
 
-                                </Grid>
-                            </Border>
+                                </Grid>-->
+                                </Border>
+                            </Grid>
                         </Grid>
-                    </Grid>
 
 
+                        <StackPanel Orientation="Horizontal" Height="50" TextElement.FontSize="17">
+                            <Button Content="Add" Height="40" Width="70" Margin="100 0 100 0"
+                Command="{Binding AddCourseCommand , BindsDirectlyToSource=True}">
 
-                    <Button Content="Add"
-                Command="{Binding AddCourseCommand }">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MulitConverter}" >
+                                        <Binding Path="Text" ElementName="textBoxCourseName"/>
+                                        <Binding Path="Text" ElementName="textBoxMark" />
+                                        <Binding Path="Text" ElementName="textBoxPoints"/>
+                                        <!--<Binding Path="Text" ElementName="textBoxYear" />-->
+                                        <Binding Path="SelectedValue" ElementName="textBoxYear" />
+                                        <Binding Path="SelectedValue" ElementName="comboBoxSemester" />
+                                    </MultiBinding>
+                                </Button.CommandParameter>
 
-                        <Button.CommandParameter>
-                            <MultiBinding Converter="{StaticResource MulitConverter}" >
-                                <Binding Path="Text" ElementName="textBoxCourseName"/>
-                                <Binding Path="Text" ElementName="textBoxMark" />
-                                <Binding Path="Text" ElementName="textBoxPoints"/>
-                                <Binding Path="Text" ElementName="textBoxYear" />
-                            </MultiBinding>
-                        </Button.CommandParameter>
+                            </Button>
 
-                    </Button>
-
-                    <Button Content="Remove" Height="20" Background="Aquamarine"
+                            <Button Content="Remove" Height="40" Width="80" Margin="100 0 0 0"
+                                    Background="Aquamarine"
                      Command="{Binding RemoveCourseCommand}"
                      CommandParameter="{Binding ElementName=ListCourses, Path=SelectedItem}"
                      />
+                        </StackPanel>
 
-                </StackPanel>
-            </Expander>
-<!--#endregion-->
+                    </StackPanel>
+                </Expander>
+                <!--#endregion-->
 
-            <ListBox ItemsSource="{Binding Items}" Grid.Row="1" x:Name="ListCourses" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                <ListBox ItemsSource="{Binding Items}" Grid.Row="1" x:Name="ListCourses" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                      Background="Transparent" BorderBrush="Transparent" >
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <local:CourseListItem/>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel IsItemsHost="True" Orientation="Horizontal"  />
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
-            </ListBox>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <local:CourseListItem/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" Orientation="Horizontal"  />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
 
 
-            <!--#region this is what was and worked-->
-            <!--
+                <!--#region this is what was and worked-->
+                <!--
             
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible">
                     <ItemsControl x:Name="ListCourses" ItemsSource="{Binding Items}" ScrollViewer.VerticalScrollBarVisibility="Visible" >
                     -->
-            <!--DataContext="{Binding core:CoursesListViewModel}"-->
-            <!-- d:DataContext="{x:Static core:CoursesListViewModelDesign.Lists}"-->
-            <!--
+                <!--DataContext="{Binding core:CoursesListViewModel}"-->
+                <!-- d:DataContext="{x:Static core:CoursesListViewModelDesign.Lists}"-->
+                <!--
 
 
 
@@ -240,8 +286,9 @@
                 </ItemsControl>
             </ScrollViewer>
             -->
-            <!--#endregion-->
+                <!--#endregion-->
 
+            </Grid>
         </Grid>
     </Border>
 

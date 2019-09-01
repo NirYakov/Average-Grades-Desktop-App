@@ -11,7 +11,14 @@
         x:Name="AppWindow"
         MinHeight="400"
         MinWidth="300"
-        Title="MainWindow" Height="450" Width="600" >
+        Title="MainWindow"
+        Height="600"
+        Width="1000" 
+        >
+    <!--Height="450"
+    Width="600"-->
+
+
 
     <!-- <local:CoursesListControl/> -->
 
@@ -115,7 +122,7 @@
         </StackPanel>
 
         <Border Height="2" Grid.Row="1" Background="Aqua" />
-        <local:CourseListItem Grid.RowSpan="3" />
+        <!--<local:CourseListItem Grid.RowSpan="3" />-->
         <local:CoursesListControl Grid.Row="3" Margin="0 5 0 0" MouseDoubleClick="CoursesListControl_MouseDoubleClick"/>
 
     </Grid>
