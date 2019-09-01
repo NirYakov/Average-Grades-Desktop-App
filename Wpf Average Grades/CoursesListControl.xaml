@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AverageGrades"
              xmlns:core="clr-namespace:GradesAverage.Core;assembly=GradesAverage.Core"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="600">
 
@@ -55,8 +56,7 @@
                 <Setter Property="Foreground" Value="Violet"/>
             </Style.Setters>
         </Style>-->
-
-
+        <system:String x:Key="formatString" >{0,7:0.00}</system:String>
     </UserControl.Resources>
 
 
@@ -73,7 +73,7 @@
             <Border>
                 <StackPanel TextBlock.FontSize="20" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="Average :" Foreground="White" Background="Crimson"/>
-                    <TextBlock Text="{Binding CalAverage}" Foreground ="Black" Background="Wheat"  Margin="2 0 0 0"/>
+                    <TextBlock Text="{Binding CalAverage.AverageTotal , StringFormat={StaticResource formatString} }" Foreground ="Black" Background="Wheat"  Margin="2 0 0 0"/>
                     <TextBlock Text="Points :" Foreground="White" Background="Blue" Margin="200 0 0 0"/>
                     <TextBlock Text="{Binding CalAverage.PointsTotal}" Foreground ="Black" Background="Wheat"  Margin="2 0 0 0"/>
 

@@ -5,7 +5,7 @@ using System.Text;
 namespace GradesAverage.Core
 {
 
-    public class CalculateAvg
+    public class CalculateAvg : ObservableObject
     {
         private float m_MarkTotal;
         private float m_PointsTotal;
@@ -49,8 +49,10 @@ namespace GradesAverage.Core
         {
             m_MarkTotal += i_Mark * i_Points;
             m_PointsTotal += i_Points;
-        }
 
+            NotifiersGroup();
+        }
+        
         public CalculateAvg AddMarkAndPoints(string i_MarkString, string i_PointsString)
         {
             parseTwoNumbers(i_MarkString, out float mark, i_PointsString, out float points);
@@ -62,6 +64,7 @@ namespace GradesAverage.Core
         {
             parseTwoNumbers(i_MarkString, out float mark, i_PointsString, out float points);
             SubstractMarkAndPoints(mark, points);
+            NotifiersGroup();
         }
 
         public void SubstractMarkAndPoints(float i_Mark, float i_Points)
@@ -76,11 +79,17 @@ namespace GradesAverage.Core
 
         public void ChangeMarkAndTotal(string i_MarkString, string i_PointsString)
         {
-            //float markOffset = float.Parse(i_Mark);
-            //float points = float.Parse(i_Points);
-            parseTwoNumbers(i_MarkString, out float markOffset, i_PointsString, out float points);
 
-            m_MarkTotal += markOffset * points;
+           parseTwoNumbers(i_MarkString, out float markOffset, i_PointsString, out float points);
+            ChangeMarkAndTotal(markOffset,points);
+        }
+
+        public void ChangeMarkAndTotal(float i_OffsetMark , float i_Points)
+        {
+            m_MarkTotal += i_OffsetMark * i_Points;
+
+            OnPropertyChanged(nameof(MarkTotal));
+            OnPropertyChanged(nameof(AverageTotal));
         }
 
         private static void parseTwoNumbers(string i_MarkString, out float i_Mark, string i_PointsString, out float i_Points)
@@ -107,5 +116,13 @@ namespace GradesAverage.Core
             float answerTotalAverage = markTotal / m_PointsTotal;
             return answerTotalAverage;
         }
+
+        private void NotifiersGroup()
+        {
+            OnPropertyChanged(nameof(PointsTotal));
+            OnPropertyChanged(nameof(MarkTotal));
+            OnPropertyChanged(nameof(AverageTotal));
+        }
+
     }
 }
