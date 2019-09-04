@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:AverageGrades"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MainWindow.xaml"
+             >
+
+    <!-- LogInWindow.xaml -->
+    <!-- MainWindow.xaml -->
+    
+    
     <!-- this is new namespace for me , llok for it -->
     <!--xmlns:system="clr-namespace:System;assembly=mscorlib"-->
+    
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

@@ -122,6 +122,7 @@
                                 </Border>
                                 <TextBox Background="{StaticResource BackgroundTextBoxBrush}" Grid.Column="1" 
                                  x:Name="textBoxCourseName"
+                                         Text="N/a"
                                      />
                             </Grid>
 
@@ -143,7 +144,7 @@
                                   HorizontalAlignment="Center" VerticalAlignment="Center"
                                    />
                                 </Border>
-                                <TextBox Grid.Column="1" x:Name="textBoxMark" Text=" 360" />
+                                <TextBox Grid.Column="1" x:Name="textBoxMark" Text=" 36" />
 
 
                                 <Border Background="{StaticResource BackgroundTextsBrush}" Grid.Column="2" >
@@ -232,7 +233,18 @@
                      Command="{Binding RemoveCourseCommand}"
                      CommandParameter="{Binding ElementName=ListCourses, Path=SelectedItem}"
                      />
+
+                            <Button Margin="10" Content="Undo"
+                                    Command="{Binding UndoCommand}"
+                                    />
+
+                            <Button Margin="10" Content="Save"
+                                    Command="{Binding SaveCommand}"
+                                    />
+
                         </StackPanel>
+
+
 
                     </StackPanel>
                 </Expander>

@@ -1,5 +1,8 @@
 Next things are
 
+	-- added button for saving and added a button for undo.
+	-- for now less in this app and more to courses stuff.
+
 	add checkbox of [auto saving] , button of [Saving Now] , and or button [Undo]
 	need to add saving and load . 
 		

@@ -12,12 +12,45 @@ using System.Windows.Data;
 
 namespace AverageGrades
 {
-    public class CoursesListViewModelUi : CoursesListViewModel 
+    public class CoursesListViewModelUi : CoursesListViewModel
     {
+
+        public RelayCommand UndoCommand { get; }
+    
+        private readonly Stack<int> r_CoursesStackIndexes;
 
         public CoursesListViewModelUi()
         {
+            //UndoCommand = new RelayCommand(Undo, CanUndo);
+            UndoCommand = new RelayCommand(Undo);
+            r_CoursesStackIndexes = new Stack<int>();
+        }
 
+        public override void AddMoreOne(string[] i_ParametersAry)
+        {
+            base.AddMoreOne(i_ParametersAry);
+            r_CoursesStackIndexes.Push(Items.Count - 1);
+        }
+
+        public void Undo()
+        {
+            if ((r_CoursesStackIndexes.Count > 0))
+            {
+                CourseItemViewModel item = Items[r_CoursesStackIndexes.Peek()];
+                CalAverage.SubstractMarkAndPoints(item.Mark,item.Points);
+                Items.RemoveAt(r_CoursesStackIndexes.Pop());
+            }
+        }
+
+        public bool CanUndo()
+        {
+            bool canUndo = true;
+            if (r_CoursesStackIndexes.Count <= 0)
+            {
+                canUndo = false;
+            }
+
+            return canUndo;
         }
 
         public void SomeTesting()
@@ -52,7 +85,7 @@ namespace AverageGrades
 
             Items.CollectionChanged += (s, e) =>
             {
-                
+
 
             };
 

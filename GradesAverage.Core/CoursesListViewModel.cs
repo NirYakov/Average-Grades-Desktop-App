@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,10 @@ namespace GradesAverage.Core
 
         public RelayCommand<CourseItemViewModel> RemoveCourseCommand { get; }
 
-        private readonly CourseItemViewModel r_CourseCheck;
+        public RelayCommand SaveCommand { get; }
+
+        // this is only protected for testing , can be private
+        protected readonly CourseItemViewModel r_CourseCheck;
 
         public CalculateAvg CalAverage { get; set; }
 
@@ -29,41 +33,80 @@ namespace GradesAverage.Core
 
             r_CourseCheck = new CourseItemViewModel();
 
+            SaveCommand = new RelayCommand(Save);
+
             CalAverage = new CalculateAvg();
 
             Items = new ObservableCollection<CourseItemViewModel>();
+            var toAdd = new CourseItemViewModel() { CourseName = "Fore to see long text input.", Mark = 77, Points = 2f, Year = 2, Semester = eSemester.C };
+
+
+            toAdd = new CourseItemViewModel() { CourseName = "One for me", Mark = 96, Points = 2, Year = 2, Semester = eSemester.B };
+            Items.Add(toAdd);
+            CalAverage.AddMarkAndPoints(toAdd.Mark, toAdd.Points);
+
+
+            toAdd = new CourseItemViewModel() { CourseName = "Two for you :)", Mark = 81, Points = 4.5f, Year = 1, Semester = eSemester.A };
+            Items.Add(toAdd);
+            CalAverage.AddMarkAndPoints(toAdd.Mark, toAdd.Points);
+
+
+            toAdd = new CourseItemViewModel() { CourseName = "Third is here ", Mark = 83, Points = 3.5f, Year = 3, Semester = eSemester.A };
+            Items.Add(toAdd);
+            CalAverage.AddMarkAndPoints(toAdd.Mark, toAdd.Points);
+
+
+            toAdd = new CourseItemViewModel() { CourseName = "Fore to see long text input.", Mark = 77, Points = 2f, Year = 2, Semester = eSemester.C };
+            Items.Add(toAdd);
+            CalAverage.AddMarkAndPoints(toAdd.Mark, toAdd.Points);
+
             
 
-            r_CourseCheck = new CourseItemViewModel() { CourseName = "One for me", Mark = 96, Points = 2, Year = 2, Semester = eSemester.B };
-            Items.Add(r_CourseCheck);
-            CalAverage.AddMarkAndPoints(r_CourseCheck.Mark , r_CourseCheck.Points);
+            bool testingSave = false;
+            //if (testingSave)
+            //{
+            //    try
+            //    {
+
+            //        foreach (CourseItemViewModel item in Items)
+            //        {
+            //            CalAverage.SubstractMarkAndPoints(item.Mark, item.Points);
+            //        }
+
+            //        Items = StaticSaverTest.DataMeneger.LoadData();
+
+            //        // Items.Sum(x => x.Points).Select(n => new { TotalMark = n.Mark, TotalPoints = n.Points });
+
+            //        var sums = Items.GroupBy(q => 1)
+            //        .Select(g => new
+            //        {
+            //            TotalMark = g.Sum(q => q.Mark),
+            //            TotalPoint = g.Sum(q => q.Points),
+            //            // etc etc
+            //        })
+            //        .Single();
+
+            //        //CalAverage.AddMarkAndPoints(sums.TotalMark,sums.TotalPoint);
+
+            //        foreach (CourseItemViewModel item in Items)
+            //        {
+            //            CalAverage.AddMarkAndPoints(item.Mark, item.Points);
+            //        }
 
 
-            r_CourseCheck = new CourseItemViewModel() { CourseName = "Two for you :)", Mark = 81, Points = 4.5f, Year = 1, Semester = eSemester.A };
-            Items.Add(r_CourseCheck);
-            CalAverage.AddMarkAndPoints(r_CourseCheck.Mark , r_CourseCheck.Points);
+            //        //StaticSaverTest.DataMeneger.SaveData(Items);
+            //    }
+            //    catch (Exception ex)
+            //    {
 
+            //    }
+            //}
 
-            r_CourseCheck = new CourseItemViewModel() { CourseName = "Third is here ", Mark = 83, Points = 3.5f, Year = 3, Semester = eSemester.A };
-            Items.Add(r_CourseCheck);
-            CalAverage.AddMarkAndPoints(r_CourseCheck.Mark , r_CourseCheck.Points);
+        }
 
-
-            r_CourseCheck = new CourseItemViewModel() { CourseName = "Fore to see long text input.", Mark = 77, Points = 2f, Year = 2, Semester = eSemester.C };
-            Items.Add(r_CourseCheck);
-            CalAverage.AddMarkAndPoints(r_CourseCheck.Mark , r_CourseCheck.Points);
-           
-
-            // try
-            {
-                //   Items = StaticSaverTest.DataMeneger.LoadData();
-                //StaticSaverTest.DataMeneger.SaveData(Items);
-            }
-            // catch (Exception ex)
-            {
-
-            }
-
+        public void Save()
+        {
+            StaticSaverTest.DataMeneger.SaveData(Items);
         }
 
         private void initItemsList()
@@ -85,11 +128,11 @@ namespace GradesAverage.Core
             {
                 try
                 {
-                        r_CourseCheck.CourseName = i_ParametersAry[0];
-                        r_CourseCheck.Mark = ushort.Parse(i_ParametersAry[1]);
-                        r_CourseCheck.Points = float.Parse(i_ParametersAry[2]);
-                        r_CourseCheck.Year = short.Parse(i_ParametersAry[3]);
-                        r_CourseCheck.Semester = (eSemester)Enum.Parse(typeof(eSemester), i_ParametersAry[4]);
+                    r_CourseCheck.CourseName = i_ParametersAry[0];
+                    r_CourseCheck.Mark = ushort.Parse(i_ParametersAry[1]);
+                    r_CourseCheck.Points = float.Parse(i_ParametersAry[2]);
+                    r_CourseCheck.Year = short.Parse(i_ParametersAry[3]);
+                    r_CourseCheck.Semester = (eSemester)Enum.Parse(typeof(eSemester), i_ParametersAry[4]);
                 }
                 catch
                 {
@@ -100,7 +143,8 @@ namespace GradesAverage.Core
             return canAdd;
         }
 
-        public void AddMoreOne(string[] i_ParametersAry)
+        // BM : this is virtual for testing another fitcher.
+        public virtual void AddMoreOne(string[] i_ParametersAry)
         {
             if (i_ParametersAry != null)
             {
@@ -115,7 +159,7 @@ namespace GradesAverage.Core
 
                 CalAverage.AddMarkAndPoints(r_CourseCheck.Mark, r_CourseCheck.Points);
             }
-            
+
             // StaticSaverTest.DataMeneger.SaveData(Items);
 
             //Items.Add(new CourseItemViewModel() { CourseName = $"blank --> {index++}" });
@@ -135,7 +179,7 @@ namespace GradesAverage.Core
 
             //Items = new ObservableCollection<CourseItemViewModel>(Items.OrderBy(n => n.Mark));
 
-            
+
 
         }
     }
